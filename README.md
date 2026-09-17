@@ -1,0 +1,1 @@
+# patriotikoprivnice.cz
