@@ -33,7 +33,8 @@ text:"Na 21. zasedání Zastupitelstva města Kopřivnice se projednávala řada
 video:"https://www.youtube.com/embed/soYVftoVsC0?rel=0"
 },
 "2":{kicker:"PROGRAM",title:"Co chceme pro naše město",text:"Podrobnější představení jednotlivých bodů programu."},
-"3":{kicker:"MĚSTO",title:"Naše město, naše budoucnost",text:"Informace o našich aktivitách a dění v Kopřivnici."}
+"3":{kicker:"MĚSTO",title:"Naše město, naše budoucnost",text:"Informace o našich aktivitách a dění v Kopřivnici."},
+"4":{kicker:"BRZY · ROZHOVOR",title:"Rozhovor s lídrem",text:"Rozhovor s lídrem kandidátky o Kopřivnici a tématech, která jsou pro město důležitá."}
 };
 
 function byId(id){return document.getElementById(id);}
