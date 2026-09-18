@@ -94,3 +94,40 @@ body{width:100%;min-width:100vw;max-width:100vw;overflow-x:hidden}
   .candidate p{font-size:10px}
   .candidate>div:not(.portrait){min-height:58px}
 }
+
+/* Kandidáti – správný portrétní poměr a ženy červeně */
+.candidate .portrait{
+  height:auto;
+  aspect-ratio:4 / 5;
+  min-height:0;
+}
+.candidate .portrait img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center top;
+}
+.candidate .portrait span{
+  background:var(--blue);
+}
+.candidate:nth-child(5) .portrait span,
+.candidate:nth-child(6) .portrait span,
+.candidate:nth-child(9) .portrait span,
+.candidate:nth-child(17) .portrait span{
+  background:var(--red);
+}
+.candidate:nth-child(5)>div:not(.portrait),
+.candidate:nth-child(6)>div:not(.portrait),
+.candidate:nth-child(9)>div:not(.portrait),
+.candidate:nth-child(17)>div:not(.portrait){
+  background:var(--red);
+}
+@media(max-width:950px){
+  .candidate-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .candidate .portrait{aspect-ratio:4 / 5}
+}
+@media(max-width:650px){
+  .candidate-grid{grid-template-columns:1fr}
+  .candidate .portrait{aspect-ratio:4 / 5;height:auto}
+  .candidate>div:not(.portrait){min-height:58px}
+}
