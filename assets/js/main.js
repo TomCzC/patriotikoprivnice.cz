@@ -3,25 +3,25 @@
 
 var candidateData={
 "1":["Mgr. Dušan Krompolc","Muž","62","právník","Lubina","Bez politické příslušnosti, nezávislý kandidát"],
-"2":["Petr Kypr","Muž","59","projektový vedoucí","Kopřivnice","Sociální demokracie"],
-"3":["Milan Černý","Muž","59","Podnikatel v gastronomii","Kopřivnice","Bez politické příslušnosti, nezávislý kandidát"],
+"2":["Petr Kypr","Muž","44","projektový vedoucí","Kopřivnice","Sociální demokracie"],
+"3":["Milan Černý","Muž","59","OSVČ","Kopřivnice","Bez politické příslušnosti, nezávislý kandidát"],
 "4":["Ing. Petr Kovář","Muž","56","daňový specialista","Lubina","Bez politické příslušnosti, nezávislý kandidát"],
-"5":["Mgr. Helena Pýchová","Žena","66","důchodce","Kopřivnice","Bez politické příslušnosti, nezávislý kandidát"],
-"6":["Ludmila Michálková DiS.","Žena","61","Farmaceutický laborant","Kopřivnice","Bez politické příslušnosti, nezávislý kandidát"],
+"5":["Mgr. Helena Pýchová","Žena","66","psycholog","Kopřivnice","Bez politické příslušnosti, nezávislý kandidát"],
+"6":["Ludmila Michálková DiS.","Žena","61","farmaceutický laborant","Kopřivnice","Bez politické příslušnosti, nezávislý kandidát"],
 "7":["Jaroslav Durček","Muž","75","mykolog","Lubina","Bez politické příslušnosti, nezávislý kandidát"],
 "8":["Jaroslav Kovařík","Muž","57","technik","Lubina","Bez politické příslušnosti, nezávislý kandidát"],
 "9":["Elisabeth Prusenovská","Žena","23","student","Kopřivnice","Bez politické příslušnosti, nezávislý kandidát"],
-"10":["Petr Šiko","Muž","61","Technik","Kopřivnice","Bez politické příslušnosti, nezávislý kandidát"],
+"10":["Petr Šiko","Muž","61","technik","Kopřivnice","Bez politické příslušnosti, nezávislý kandidát"],
 "11":["Tomáš Běčák","Muž","22","student","Mniší","Bez politické příslušnosti, nezávislý kandidát"],
 "12":["Roman Stopka","Muž","41","trenér Aikidó","Kopřivnice","Bez politické příslušnosti, nezávislý kandidát"],
 "13":["Robert Kasík","Muž","46","pracovník logistiky","Kopřivnice","Bez politické příslušnosti, nezávislý kandidát"],
 "14":["Jan Kelnar","Muž","48","OSVČ","Kopřivnice","Bez politické příslušnosti, nezávislý kandidát"],
-"15":["Martin Mertl","Muž","44","Strojírenský dělník","Kopřivnice","Bez politické příslušnosti, nezávislý kandidát"],
-"16":["Denis Novák","Muž","30","Barman","Kopřivnice","Bez politické příslušnosti, nezávislý kandidát"],
+"15":["Martin Mertl","Muž","44","strojírenský dělník","Kopřivnice","Bez politické příslušnosti, nezávislý kandidát"],
+"16":["Denis Novák","Muž","30","barman","Kopřivnice","Bez politické příslušnosti, nezávislý kandidát"],
 "17":["Ing. Blanka Krompolcová","Žena","58","vedoucí provozu","Lubina","Bez politické příslušnosti, nezávislý kandidát"],
 "18":["Marek Bittner","Muž","29","montážní dělník","Kopřivnice","Bez politické příslušnosti, nezávislý kandidát"],
 "19":["Martin Kresta","Muž","42","mobilní masér","Kopřivnice","Bez politické příslušnosti, nezávislý kandidát"],
-"20":["Vojtěch Zátopek","Muž","27","Operátor CNC modulů","Mniší","Bez politické příslušnosti, nezávislý kandidát"],
+"20":["Vojtěch Zátopek","Muž","26","operátor CNC modulů","Mniší","Bez politické příslušnosti, nezávislý kandidát"],
 "21":["Antonín Gala","Muž","61","pracovník v gastronomii","Kopřivnice","Bez politické příslušnosti, nezávislý kandidát"]
 };
 
