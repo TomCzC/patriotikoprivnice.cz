@@ -173,3 +173,17 @@ body{width:100%;min-width:100vw;max-width:100vw;overflow-x:hidden}
 .candidate[data-candidate="6"] .portrait span,
 .candidate[data-candidate="9"] .portrait span,
 .candidate[data-candidate="17"] .portrait span{background:#ed1c24!important;color:#fff!important}
+
+/* Aktuality – rozkliknutí jako u kandidátů */
+.news-card{cursor:pointer;transition:transform .18s ease,box-shadow .18s ease}
+.news-card:hover{transform:translateY(-4px);box-shadow:0 12px 28px #00000020}
+.news-card:focus-visible{outline:3px solid var(--red);outline-offset:3px}
+.news-modal{position:fixed;inset:0;z-index:300;display:none;align-items:center;justify-content:center;padding:20px}
+.news-modal.open{display:flex}
+.news-modal-backdrop{position:absolute;inset:0;background:#0b1238b8;backdrop-filter:blur(3px)}
+.news-modal-box{position:relative;z-index:1;width:min(700px,100%);max-height:min(80vh,700px);overflow:auto;background:#fff;border-top:7px solid var(--red);padding:42px 42px 38px;box-shadow:0 24px 70px #0005}
+.news-modal-close{position:absolute;right:15px;top:8px;border:0;background:transparent;color:var(--blue);font-size:38px;line-height:1;cursor:pointer}
+.news-modal-kicker{margin-top:8px;color:var(--red);font:800 14px 'Barlow Condensed';letter-spacing:2px}
+.news-modal-box h3{font-size:48px;line-height:.95;margin:7px 0 22px}
+.news-modal-text{font-size:18px;line-height:1.65;color:#4f5564;margin-bottom:30px;white-space:pre-line}
+@media(max-width:650px){.news-modal{padding:12px}.news-modal-box{padding:36px 24px 28px}.news-modal-box h3{font-size:38px}.news-modal-text{font-size:16px}}
