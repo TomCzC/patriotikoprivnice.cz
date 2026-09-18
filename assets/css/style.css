@@ -374,3 +374,22 @@ html.news-lock,body.news-lock{overflow:hidden!important}
 @media (min-width:1400px){
   .news-modal-box{max-width:820px}
 }
+
+
+/* Horizontální aktuality: na PC se karty posouvají doleva/doprava */
+.news-grid{display:flex;flex-wrap:nowrap;overflow-x:auto;overflow-y:hidden;gap:18px;padding:4px 2px 18px;scroll-snap-type:x proximity;-webkit-overflow-scrolling:touch;scrollbar-width:auto}
+.news-grid .news-card{flex:0 0 calc((100% - 54px)/4);min-width:270px;scroll-snap-align:start}
+.news-grid::-webkit-scrollbar{height:10px}
+.news-grid::-webkit-scrollbar-track{background:#ffffff33}
+.news-grid::-webkit-scrollbar-thumb{background:#fff;border-radius:10px}
+@media(max-width:1024px){
+ .news-grid .news-card{flex-basis:calc((100% - 36px)/3);min-width:250px}
+ .news-card:last-child{grid-column:auto}
+}
+@media(max-width:650px){
+ .news-grid{gap:12px;padding-bottom:14px}
+ .news-grid .news-card{flex-basis:82vw;min-width:0}
+}
+@media(max-width:380px){
+ .news-grid .news-card{flex-basis:88vw}
+}
