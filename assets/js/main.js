@@ -97,80 +97,65 @@ document.addEventListener("DOMContentLoaded",function(){
       text:"Na 21. zasedání Zastupitelstva města Kopřivnice se projednávala řada témat, která se dotýkají každodenního života ve městě. Mezi hlavní body patřil dotační program pro sport a volný čas na rok 2027, řešení problémů v MŠ Pionýrská, parkování a dopravní infrastruktura, majetkové převody i další rozpočtové a investiční otázky.\n\nDůležitou debatou v závěru jednání byla rekonstrukce vstupu a vestibulu radnice. V diskusi vystoupil také náš zastupitel Mgr. Dušan Krompolc, který se věnoval otázkám změnových listů, víceprací a transparentnosti při nakládání s prostředky města. Záznam jednání umožňuje občanům udělat si vlastní obrázek o průběhu debaty a jednotlivých vystoupeních.\n\nNa jednání byla řešena také témata jako parkování v ulicích Družební a Polní, chodník na Janáčkově ulici, dopravní řešení ve Vlčovicích nebo majetkové otázky města. V bodu Různé byla prezentována také zpětná vazba obyvatel města, včetně témat, která občané považují za důležitá, například bydlení a parkování.\n\nPaní Mgr. Helena Pýchová se tohoto zasedání nezúčastnila. Její nepřítomnost proto v tomto článku nespojujeme s žádným konkrétním postojem či vystoupením na jednání.\n\nCelý záznam 21. zasedání Zastupitelstva města Kopřivnice najdete přímo ve videu níže.",
       video:"https://www.youtube.com/embed/soYVftoVsC0?rel=0"
     },
-    "2":{
-      kicker:"PROGRAM",
-      title:"Co chceme pro naše město",
-      text:"Podrobnější představení jednotlivých bodů programu."
-    },
-    "3":{
-      kicker:"MĚSTO",
-      title:"Naše město, naše budoucnost",
-      text:"Informace o našich aktivitách a dění v Kopřivnici."
-    }
+    "2":{kicker:"PROGRAM",title:"Co chceme pro naše město",text:"Podrobnější představení jednotlivých bodů programu."},
+    "3":{kicker:"MĚSTO",title:"Naše město, naše budoucnost",text:"Informace o našich aktivitách a dění v Kopřivnici."}
   };
 
   const newsModal=document.querySelector("#news-modal");
   if(newsModal){
+    if(newsModal.parentElement!==document.body) document.body.appendChild(newsModal);
+
     const kickerEl=document.querySelector("#news-modal-kicker");
     const titleEl=document.querySelector("#news-modal-title");
     const textEl=document.querySelector("#news-modal-text");
     const videoEl=document.querySelector("#news-modal-video");
+    let opened=false;
 
     function closeNews(){
-      if(videoEl)videoEl.innerHTML="";
+      videoEl.innerHTML="";
       newsModal.classList.remove("open");
       newsModal.setAttribute("aria-hidden","true");
       document.body.style.overflow="";
+      opened=false;
     }
 
-    document.querySelectorAll(".news-card[data-news]").forEach(function(card){
-      function openNews(event){
-        if(event){
-          event.preventDefault();
-          event.stopPropagation();
-        }
-        const n=newsData[card.dataset.news];
-        if(!n)return;
-
-        kickerEl.textContent=n.kicker;
-        titleEl.textContent=n.title;
-        textEl.textContent=n.text;
-
-        if(videoEl){
-          videoEl.innerHTML="";
-          if(n.video){
-            const wrap=document.createElement("div");
-            wrap.className="news-video-wrap";
-
-            const iframe=document.createElement("iframe");
-            iframe.src=n.video;
-            iframe.title="21. zasedání Zastupitelstva města Kopřivnice";
-            iframe.setAttribute("allow","accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share");
-            iframe.setAttribute("allowfullscreen","");
-            iframe.frameBorder="0";
-
-            wrap.appendChild(iframe);
-            videoEl.appendChild(wrap);
-          }
-        }
-
-        newsModal.classList.add("open");
-        newsModal.setAttribute("aria-hidden","false");
-        document.body.style.overflow="hidden";
+    function openNews(id,event){
+      if(event){event.preventDefault();event.stopPropagation();}
+      const n=newsData[id];
+      if(!n)return;
+      kickerEl.textContent=n.kicker;
+      titleEl.textContent=n.title;
+      textEl.textContent=n.text;
+      videoEl.innerHTML="";
+      if(n.video){
+        const wrap=document.createElement("div");
+        wrap.className="news-video-wrap";
+        const iframe=document.createElement("iframe");
+        iframe.src=n.video;
+        iframe.title="21. zasedání Zastupitelstva města Kopřivnice";
+        iframe.setAttribute("allow","accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share");
+        iframe.setAttribute("allowfullscreen","");
+        iframe.frameBorder="0";
+        wrap.appendChild(iframe);
+        videoEl.appendChild(wrap);
       }
+      newsModal.classList.add("open");
+      newsModal.setAttribute("aria-hidden","false");
+      document.body.style.overflow="hidden";
+      opened=true;
+    }
 
-      card.addEventListener("click",openNews);
-      card.addEventListener("keydown",function(e){
-        if(e.key==="Enter"||e.key===" "){openNews(e);}
-      });
-    });
-
-    newsModal.querySelectorAll("[data-close-news]").forEach(function(el){
-      el.addEventListener("click",function(e){e.preventDefault();closeNews();});
+    document.addEventListener("click",function(e){
+      const card=e.target.closest(".news-card[data-news]");
+      if(card){openNews(card.dataset.news,e);return;}
+      const close=e.target.closest("[data-close-news]");
+      if(close && opened) closeNews();
     });
 
     document.addEventListener("keydown",function(e){
-      if(e.key==="Escape"&&newsModal.classList.contains("open"))closeNews();
+      const card=document.activeElement?.closest?.(".news-card[data-news]");
+      if(card && (e.key==="Enter"||e.key===" ")){openNews(card.dataset.news,e);}
+      if(e.key==="Escape" && opened) closeNews();
     });
   }
 });
