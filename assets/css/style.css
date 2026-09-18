@@ -393,3 +393,34 @@ html.news-lock,body.news-lock{overflow:hidden!important}
 @media(max-width:380px){
  .news-grid .news-card{flex-basis:88vw}
 }
+
+/* Aktuality: plně responzivní karty a posuvník */
+.news-grid{display:flex!important;flex-wrap:nowrap!important;overflow-x:auto!important;overflow-y:hidden!important;gap:18px!important;padding:4px 2px 18px!important;scroll-snap-type:x proximity;-webkit-overflow-scrolling:touch;touch-action:pan-x;overscroll-behavior-x:contain}
+.news-grid .news-card{flex:0 0 calc((100% - 54px)/4)!important;min-width:270px!important;scroll-snap-align:start}
+.news-card{min-height:0;overflow:hidden}
+.news-body{min-width:0}
+.news-body h3,.news-body p,.news-body small{overflow-wrap:anywhere}
+@media(max-width:1100px){
+ .news-grid .news-card{flex-basis:calc((100% - 36px)/3)!important;min-width:250px!important}
+}
+@media(max-width:800px){
+ .news-grid{gap:14px!important;padding-bottom:14px!important}
+ .news-grid .news-card{flex-basis:min(78vw,420px)!important;min-width:0!important}
+}
+@media(max-width:520px){
+ .news-grid{gap:12px!important}
+ .news-grid .news-card{flex-basis:86vw!important}
+ .news-body{padding:16px!important}
+ .news-body h3{font-size:26px;line-height:1}
+ .news-body p{font-size:14px;line-height:1.45}
+ .news-body small{font-size:11px}
+}
+@media(max-width:380px){
+ .news-grid .news-card{flex-basis:90vw!important}
+ .news-body{padding:14px!important}
+ .news-body h3{font-size:23px}
+ .news-body p{font-size:13px}
+}
+@media(max-width:900px) and (orientation:landscape){
+ .news-grid .news-card{flex-basis:calc((100% - 18px)/2)!important;min-width:0!important}
+}
