@@ -166,3 +166,10 @@ body{width:100%;min-width:100vw;max-width:100vw;overflow-x:hidden}
   background:#123f8c !important;
   color:#fff !important;
 }
+
+/* DEFINITIVNÍ BARVY ČÍSEL KANDIDÁTŮ */
+.candidate .portrait span{background:#173f9f!important;color:#fff!important}
+.candidate[data-candidate="5"] .portrait span,
+.candidate[data-candidate="6"] .portrait span,
+.candidate[data-candidate="9"] .portrait span,
+.candidate[data-candidate="17"] .portrait span{background:#ed1c24!important;color:#fff!important}
