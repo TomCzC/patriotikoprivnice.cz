@@ -34,7 +34,7 @@ video:"https://www.youtube.com/embed/soYVftoVsC0?rel=0"
 },
 "2":{kicker:"PROGRAM",title:"Co chceme pro naše město",text:"Podrobnější představení jednotlivých bodů programu."},
 "3":{kicker:"MĚSTO",title:"Naše město, naše budoucnost",text:"Informace o našich aktivitách a dění v Kopřivnici."},
-"4":{kicker:"ROZHOVOR · PŘED ZASTUPITELSTVEM",title:"Rozhovor před zastupitelstvem",text:"Rozhovor s lídrem kandidátky před dalším zasedáním zastupitelstva."}
+"4":{kicker:"ROZHOVOR · PŘED ZASTUPITELSTVEM",title:"Rozhovor před zastupitelstvem",text:"Před dalším zasedáním Zastupitelstva města Kopřivnice přinášíme rozhovor s lídrem kandidátky. Ve videu mluví o aktuálních tématech města, o tom, čemu se chce věnovat před zastupitelstvem, a o tématech, která považuje za důležitá pro Kopřivnici.\n\nCelý rozhovor si můžete přehrát přímo zde.",video:"https://www.youtube.com/embed/U_U2tVIjLms?rel=0"}
 };
 
 function byId(id){return document.getElementById(id);}
