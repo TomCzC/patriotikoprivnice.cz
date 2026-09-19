@@ -82,6 +82,29 @@ function closeNews(){
 function closeAll(){closeCandidate();closeNews();}
 
 function init(){
+ var feedback=id("feedback-form"),feedbackFrame=id("feedback-submit-frame"),feedbackStatus=id("feedback-status");
+ if(feedback&&!feedback.dataset.bound){
+   feedback.dataset.bound="1";
+   feedback.addEventListener("submit",function(e){
+     var endpoint=feedback.getAttribute("data-endpoint")||"";
+     if(!endpoint){
+       e.preventDefault();
+       if(feedbackStatus)feedbackStatus.textContent="Formulář zatím není připojen.";
+       return;
+     }
+     feedback.setAttribute("action",endpoint);
+     feedback.dataset.pending="1";
+     if(feedbackStatus)feedbackStatus.textContent="Odesílám podnět…";
+   });
+   if(feedbackFrame){
+     feedbackFrame.addEventListener("load",function(){
+       if(feedback.dataset.pending!=="1")return;
+       feedback.dataset.pending="";
+       if(feedbackStatus)feedbackStatus.textContent="Podnět byl odeslán. Děkujeme.";
+       feedback.reset();
+     });
+   }
+ }
  var toggle=document.querySelector(".menu-toggle"),nav=id("main-nav");
  if(toggle&&nav&&!toggle.dataset.bound){
    toggle.dataset.bound="1";
