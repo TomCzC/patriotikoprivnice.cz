@@ -3,7 +3,7 @@
 
 var candidateData={
 "1":["Mgr. Dušan Krompolc","Muž","62","právník","Lubina","Bez politické příslušnosti, nezávislý kandidát"],
-"2":["Petr Kypr","Muž","44","projektový vedoucí","Kopřivnice","Sociální demokracie"],
+"2":["Petr Kypr","Muž","44","projektový vedoucí","Kopřivnice","SOCDEM, Sociální demokracie"],
 "3":["Milan Černý","Muž","59","OSVČ","Kopřivnice","Bez politické příslušnosti, nezávislý kandidát"],
 "4":["Ing. Petr Kovář","Muž","56","daňový specialista","Lubina","Bez politické příslušnosti, nezávislý kandidát"],
 "5":["Mgr. Helena Pýchová","Žena","66","psycholog","Kopřivnice","Bez politické příslušnosti, nezávislý kandidát"],
