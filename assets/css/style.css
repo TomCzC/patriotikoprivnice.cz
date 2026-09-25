@@ -426,12 +426,6 @@ html.news-lock,body.news-lock{overflow:hidden!important}
 }
 
 
-/* Nadpisy článků v Aktualitách */
-.news-body h3.news-article-title{
-  color:var(--red)!important;
-}
-
-
 /* Oprava viditelnosti nadpisu otevřené aktuality */
 .news-modal .news-modal-box h3#news-modal-title,
 .news-modal-box h3.news-modal-title,
