@@ -424,3 +424,9 @@ html.news-lock,body.news-lock{overflow:hidden!important}
 @media(max-width:900px) and (orientation:landscape){
  .news-grid .news-card{flex-basis:calc((100% - 18px)/2)!important;min-width:0!important}
 }
+
+
+/* Nadpisy článků v Aktualitách */
+.news-body h3.news-article-title{
+  color:var(--red)!important;
+}
