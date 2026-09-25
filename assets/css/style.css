@@ -438,3 +438,47 @@ html.news-lock,body.news-lock{overflow:hidden!important}
   visibility:visible !important;
   display:block !important;
 }
+
+
+/* Vícestránkový volební program v aktualitě */
+.news-modal-box{color:var(--ink)}
+.news-program-page-title{
+  color:var(--red);
+  font:900 clamp(25px,4vw,34px)/1.05 'Barlow Condensed';
+  text-transform:uppercase;
+  margin:0 0 20px;
+}
+.news-program-page-body{
+  white-space:pre-line;
+  color:#4f5564;
+  font-size:clamp(15px,2.2vw,18px);
+  line-height:1.65;
+}
+.news-program-pagination{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:22px;
+  margin:28px 0 30px;
+  padding-top:18px;
+  border-top:1px solid var(--line);
+  color:var(--blue);
+  font:800 16px 'Barlow Condensed';
+}
+.news-program-pagination[hidden]{display:none}
+.news-program-arrow{
+  width:44px;
+  height:40px;
+  border:0;
+  background:var(--blue);
+  color:#fff;
+  font:900 25px/1 'Arial',sans-serif;
+  cursor:pointer;
+}
+.news-program-arrow:hover:not(:disabled){background:var(--red)}
+.news-program-arrow:disabled{opacity:.3;cursor:default}
+@media(max-width:650px){
+  .news-program-page-title{font-size:27px;margin-bottom:16px}
+  .news-program-page-body{font-size:16px;line-height:1.55}
+  .news-program-pagination{margin:22px 0 24px;padding-top:14px;gap:18px}
+}
