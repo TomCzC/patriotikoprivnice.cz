@@ -443,7 +443,7 @@ html.news-lock,body.news-lock{overflow:hidden!important}
 /* Vícestránkový volební program v aktualitě */
 .news-modal-box{color:var(--ink)}
 .news-program-page-title{
-  color:var(--red);
+  color:var(--ink);
   font:900 clamp(25px,4vw,34px)/1.05 'Barlow Condensed';
   text-transform:uppercase;
   margin:0 0 20px;
