@@ -518,3 +518,6 @@ html.news-lock,body.news-lock{overflow:hidden!important}
 @media(max-width:900px) and (orientation:landscape){
   .reels-grid .reel-item{flex-basis:calc((100% - 18px)/2)!important;min-width:0!important}
 }
+
+/* Větší rozestup mezi řádky nadpisu Aktualit */
+.section-navy .section-title>span{line-height:.95}
