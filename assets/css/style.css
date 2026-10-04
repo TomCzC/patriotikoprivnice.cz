@@ -521,3 +521,6 @@ html.news-lock,body.news-lock{overflow:hidden!important}
 
 /* Větší rozestup mezi řádky nadpisu Aktualit */
 .section-navy .section-title>span{line-height:.95}
+
+/* Sociální sítě úplně vpravo ve footeru */
+.footer-main .social{grid-column:2 / 4;justify-self:end;text-align:right}
