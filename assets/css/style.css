@@ -482,3 +482,39 @@ html.news-lock,body.news-lock{overflow:hidden!important}
   .news-program-page-body{font-size:16px;line-height:1.55}
   .news-program-pagination{margin:22px 0 24px;padding-top:14px;gap:18px}
 }
+
+
+/* Facebook Reels: max. 3 vedle sebe + horizontální posuv jako u Aktualit */
+.reels-grid{
+  display:flex!important;
+  flex-wrap:nowrap!important;
+  overflow-x:auto!important;
+  overflow-y:hidden!important;
+  gap:18px!important;
+  padding:4px 2px 18px!important;
+  scroll-snap-type:x proximity;
+  -webkit-overflow-scrolling:touch;
+  touch-action:pan-x;
+  overscroll-behavior-x:contain;
+}
+.reels-grid .reel-item{
+  flex:0 0 calc((100% - 36px)/3)!important;
+  min-width:270px!important;
+  scroll-snap-align:start;
+}
+.reels-grid::-webkit-scrollbar{height:10px}
+.reels-grid::-webkit-scrollbar-thumb{background:var(--line);border-radius:10px}
+@media(max-width:800px){
+  .reels-grid{gap:14px!important;padding-bottom:14px!important}
+  .reels-grid .reel-item{flex-basis:min(78vw,420px)!important;min-width:0!important}
+}
+@media(max-width:520px){
+  .reels-grid{gap:12px!important}
+  .reels-grid .reel-item{flex-basis:86vw!important}
+}
+@media(max-width:380px){
+  .reels-grid .reel-item{flex-basis:90vw!important}
+}
+@media(max-width:900px) and (orientation:landscape){
+  .reels-grid .reel-item{flex-basis:calc((100% - 18px)/2)!important;min-width:0!important}
+}
