@@ -571,3 +571,15 @@ html.news-lock,body.news-lock{overflow:hidden!important}
   .site-header .topline{height:auto!important;min-height:0!important;overflow:visible!important}
   .site-header .topinner{height:auto!important;min-height:0!important;box-sizing:border-box!important;padding-top:7px!important;padding-bottom:7px!important}
 }
+
+/* Desktop: slogan right, election countdown centered; mobile: align header content right */
+@media (min-width:651px){
+  .topinner{position:relative}
+  .topinner>span:nth-child(2){margin-left:auto}
+  .topinner>.election-countdown{position:absolute;left:50%;transform:translateX(-50%);margin-left:0;text-align:center}
+}
+@media (max-width:650px){
+  .topinner>span:first-child{text-align:right!important}
+  .topinner>span:nth-child(2){text-align:right!important}
+  .topinner>.election-countdown{text-align:right!important}
+}
