@@ -80,7 +80,8 @@ function closeCandidate(){
  m.classList.remove("open");m.setAttribute("aria-hidden","true");unlock();
 }
 
-var newsProgramPage=0;\nvar currentPagedNews="2";
+var newsProgramPage=0;
+var currentPagedNews="2";
 
 function getProgramPages(text){
  var parts=text.split(/\n\n(?=\d+\.\s)/);
@@ -98,14 +99,14 @@ function getProgramPages(text){
 function getNewsPages(id){
  var text=newsData[id].text;
  if(id==="2")return getProgramPages(text);
- var lines=text.split("\\n"),pages=[],title="",body=[];
+ var lines=text.split("\n"),pages=[],title="",body=[];
  lines.forEach(function(line){
-   if(/^\\d+\\.\\s/.test(line)){
-     if(title)pages.push({title:title,body:body.join("\\n").trim()});
-     title=line.replace(/^\\d+\\.\\s/,"");body=[];
+   if(/^\d+\.\s/.test(line)){
+     if(title)pages.push({title:title,body:body.join("\n").trim()});
+     title=line.replace(/^\d+\.\s/,"");body=[];
    }else if(title){body.push(line);}else{body.push(line);}
  });
- if(title)pages.push({title:title,body:body.join("\\n").trim()});
+ if(title)pages.push({title:title,body:body.join("\n").trim()});
  if(!pages.length)pages=[{title:"",body:text}];
  return pages;
 }
