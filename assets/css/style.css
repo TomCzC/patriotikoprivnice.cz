@@ -524,3 +524,12 @@ html.news-lock,body.news-lock{overflow:hidden!important}
 
 /* Sociální sítě úplně vpravo ve footeru */
 .footer-main .social{grid-column:2 / 4;justify-self:end;text-align:right}
+
+/* Odpočet do otevření volebních místností v horním proužku */
+.topinner{gap:18px}
+.election-countdown{margin-left:auto;font:800 12px 'Barlow Condensed';letter-spacing:.7px;color:#fff;white-space:nowrap}
+.election-countdown b{font-variant-numeric:tabular-nums}
+@media(max-width:650px){
+ .topinner{gap:6px;flex-wrap:wrap}
+ .election-countdown{width:100%;text-align:center;margin-left:0;font-size:11px;padding-bottom:3px}
+}
