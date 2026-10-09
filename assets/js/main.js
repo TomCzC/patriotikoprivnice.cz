@@ -3,17 +3,33 @@ function updateElectionCountdown(){
  var el=document.getElementById("election-countdown");
  if(!el)return;
  var now=new Date();
- var target=new Date(now);
- target.setHours(14,0,0,0);
- if(now>=target){
-   el.innerHTML="VOLEBNÍ MÍSTNOSTI JSOU OTEVŘENÉ DO 22:00";
+ var start=new Date(now); start.setHours(14,0,0,0);
+ var end=new Date(now); end.setHours(22,0,0,0);
+ var nextStart=new Date(now); nextStart.setHours(8,0,0,0);
+ if(now.getHours()>=22){nextStart.setDate(nextStart.getDate()+1);}
+ if(now>=start&&now<end){
+   el.textContent="VOLEBNÍ MÍSTNOSTI JSOU OTEVŘENÉ DO 22:00";
    return;
  }
- var seconds=Math.floor((target-now)/1000);
- var h=String(Math.floor(seconds/3600)).padStart(2,"0");
- var m=String(Math.floor((seconds%3600)/60)).padStart(2,"0");
- var s=String(seconds%60).padStart(2,"0");
- el.innerHTML="OTEVŘENÍ VOLEBNÍCH MÍSTNOSTÍ ZA <b>"+h+":"+m+":"+s+"</b>";
+ if(now>=end || now<new Date(now).setHours(0,0,0,0)+0){
+   if(now.getHours()>=22 || now.getHours()<8){
+     var seconds=Math.max(0,Math.floor((nextStart-now)/1000));
+     var h=String(Math.floor(seconds/3600)).padStart(2,"0");
+     var m=String(Math.floor((seconds%3600)/60)).padStart(2,"0");
+     var s=String(seconds%60).padStart(2,"0");
+     el.innerHTML="DALŠÍ OTEVŘENÍ VOLEBNÍCH MÍSTNOSTÍ ZA <b>"+h+":"+m+":"+s+"</b>";
+     return;
+   }
+ }
+ if(now<start){
+   var seconds=Math.max(0,Math.floor((start-now)/1000));
+   var h=String(Math.floor(seconds/3600)).padStart(2,"0");
+   var m=String(Math.floor((seconds%3600)/60)).padStart(2,"0");
+   var s=String(seconds%60).padStart(2,"0");
+   el.innerHTML="OTEVŘENÍ VOLEBNÍCH MÍSTNOSTÍ ZA <b>"+h+":"+m+":"+s+"</b>";
+ }else{
+   el.textContent="VOLEBNÍ MÍSTNOSTI JSOU ZAVŘENÉ";
+ }
 }
 updateElectionCountdown();
 window.setInterval(updateElectionCountdown,1000);
