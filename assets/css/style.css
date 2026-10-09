@@ -590,3 +590,10 @@ html.news-lock,body.news-lock{overflow:hidden!important}
   .topinner>span:nth-child(2){text-align:right!important}
   .topinner>.election-countdown{text-align:right!important}
 }
+
+/* Keep Kopřivnice at the left on mobile; right-align only the other items */
+@media (max-width:650px){
+  .topinner>span:first-child{text-align:left!important;justify-self:start!important}
+  .topinner>span:nth-child(2){text-align:right!important;justify-self:end!important}
+  .topinner>.election-countdown{text-align:right!important;justify-self:stretch!important}
+}
