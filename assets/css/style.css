@@ -539,3 +539,29 @@ html.news-lock,body.news-lock{overflow:hidden!important}
   .topinner>span{display:block!important;visibility:visible!important;opacity:1!important;max-width:100%;text-align:center!important;white-space:normal!important;line-height:1.2}
   .topinner>.election-countdown{display:block!important;flex:0 0 auto!important;width:100%!important;margin:2px 0 0!important;padding:0!important;font-size:11px!important;line-height:1.25!important;white-space:normal!important}
 }
+
+/* Mobile: compact two-line header, with countdown on line two */
+@media (max-width:650px){
+  .topinner{
+    display:grid!important;
+    grid-template-columns:1fr 1fr!important;
+    align-items:center!important;
+    justify-items:stretch!important;
+    gap:3px 10px!important;
+    padding-top:5px!important;
+    padding-bottom:5px!important;
+  }
+  .topinner>span:first-child{grid-column:1;grid-row:1;text-align:left!important}
+  .topinner>span:nth-child(2){grid-column:2;grid-row:1;text-align:right!important}
+  .topinner>.election-countdown{
+    grid-column:1 / -1!important;
+    grid-row:2!important;
+    width:100%!important;
+    margin:0!important;
+    padding:2px 0 0!important;
+    text-align:center!important;
+    font-size:11px!important;
+    line-height:1.2!important;
+    white-space:normal!important;
+  }
+}
