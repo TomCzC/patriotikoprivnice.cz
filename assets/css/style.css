@@ -533,3 +533,9 @@ html.news-lock,body.news-lock{overflow:hidden!important}
  .topinner{gap:6px;flex-wrap:wrap}
  .election-countdown{width:100%;text-align:center;margin-left:0;font-size:11px;padding-bottom:3px}
 }
+
+@media (max-width:650px){
+  .topinner{display:flex!important;flex-direction:column!important;align-items:center!important;justify-content:center!important;gap:4px!important;padding-top:5px!important;padding-bottom:5px!important;min-height:0!important}
+  .topinner>span{display:block!important;visibility:visible!important;opacity:1!important;max-width:100%;text-align:center!important;white-space:normal!important;line-height:1.2}
+  .topinner>.election-countdown{display:block!important;flex:0 0 auto!important;width:100%!important;margin:2px 0 0!important;padding:0!important;font-size:11px!important;line-height:1.25!important;white-space:normal!important}
+}
