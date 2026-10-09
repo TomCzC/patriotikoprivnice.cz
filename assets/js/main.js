@@ -3,33 +3,24 @@ function updateElectionCountdown(){
  var el=document.getElementById("election-countdown");
  if(!el)return;
  var now=new Date();
- var start=new Date(now); start.setHours(14,0,0,0);
- var end=new Date(now); end.setHours(22,0,0,0);
- var nextStart=new Date(now); nextStart.setHours(8,0,0,0);
- if(now.getHours()>=22){nextStart.setDate(nextStart.getDate()+1);}
- if(now>=start&&now<end){
-   el.textContent="VOLEBNÍ MÍSTNOSTI JSOU OTEVŘENÉ DO 22:00";
+ var electionStart=new Date(2026,9,9,14,0,0,0);
+ var fridayEnd=new Date(2026,9,9,22,0,0,0);
+ var saturdayStart=new Date(2026,9,10,8,0,0,0);
+ var electionEnd=new Date(2026,9,10,14,0,0,0);
+ if(now>=electionStart&&now<fridayEnd || now>=saturdayStart&&now<electionEnd){
+   el.textContent="VOLEBNÍ MÍSTNOSTI JSOU OTEVŘENÉ — DĚKUJEME ZA KAŽDÝ HLAS";
    return;
  }
- if(now>=end || now<new Date(now).setHours(0,0,0,0)+0){
-   if(now.getHours()>=22 || now.getHours()<8){
-     var seconds=Math.max(0,Math.floor((nextStart-now)/1000));
-     var h=String(Math.floor(seconds/3600)).padStart(2,"0");
-     var m=String(Math.floor((seconds%3600)/60)).padStart(2,"0");
-     var s=String(seconds%60).padStart(2,"0");
-     el.innerHTML="DALŠÍ OTEVŘENÍ VOLEBNÍCH MÍSTNOSTÍ ZA <b>"+h+":"+m+":"+s+"</b>";
-     return;
-   }
- }
- if(now<start){
-   var seconds=Math.max(0,Math.floor((start-now)/1000));
-   var h=String(Math.floor(seconds/3600)).padStart(2,"0");
-   var m=String(Math.floor((seconds%3600)/60)).padStart(2,"0");
-   var s=String(seconds%60).padStart(2,"0");
-   el.innerHTML="OTEVŘENÍ VOLEBNÍCH MÍSTNOSTÍ ZA <b>"+h+":"+m+":"+s+"</b>";
- }else{
-   el.textContent="VOLEBNÍ MÍSTNOSTI JSOU ZAVŘENÉ";
- }
+ var target=null;
+ var label="";
+ if(now<electionStart){target=electionStart;label="OTEVŘENÍ VOLEBNÍCH MÍSTNOSTÍ ZA ";}
+ else if(now>=fridayEnd&&now<saturdayStart){target=saturdayStart;label="DALŠÍ OTEVŘENÍ VOLEBNÍCH MÍSTNOSTÍ ZA ";}
+ else if(now>=electionEnd){el.textContent="DĚKUJEME ZA VAŠI DŮVĚRU A KAŽDÝ HLAS";return;}
+ var seconds=Math.max(0,Math.floor((target-now)/1000));
+ var h=String(Math.floor(seconds/3600)).padStart(2,"0");
+ var m=String(Math.floor((seconds%3600)/60)).padStart(2,"0");
+ var s=String(seconds%60).padStart(2,"0");
+ el.innerHTML=label+"<b>"+h+":"+m+":"+s+"</b>";
 }
 updateElectionCountdown();
 window.setInterval(updateElectionCountdown,1000);
